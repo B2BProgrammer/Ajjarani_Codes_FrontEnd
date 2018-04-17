@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+
+
+
+body {
+     /*
+   
+     background-repeat: repeat-x;
+      background-repeat: repeat-y;
+      	background-image: url("paper.gif");     
+      There is shorthand also available for this
+      background: #ffffff url("img_tree.png") no-repeat right top;
+      
+     */
+     
+     
+       background-color: lightblue;
+
+     background-repeat: no-repeat;
+     background-position: right left;     
+    
+  
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+// Selector using class name
+.center {
+    text-align: center;
+    color: white;
+}
+
+
+
+// Selector using "id"
+#para1 {  
+    text-align: center;
+    color: red;
+}
+
+/*p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+
+*/
+
+
+
+div {
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: lightblue;
+}
+
+div {
+    border: 1px solid black;
+    background-color: lightblue;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    
+    padding: 50px 30px 50px 80px;
+    outline-style: double;
+    outline-color: red;
+}
+
+

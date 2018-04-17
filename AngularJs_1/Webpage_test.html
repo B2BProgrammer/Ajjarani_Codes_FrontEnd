@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="cssTestingFile.css">
+<title>Insert title here</title>
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
+<script src="myApp_module.js"></script>
+<script src="myApp_Controller.js"></script>
+<script src="myApp_Directive.js"></script>
+
+<body ng-app="myApp">
+
+<p>The rootScope's favorite color:</p>
+<h1>{{color}}</h1>
+
+<div ng-controller="myApp_Controller">
+<p>The scope of the controller's favorite color:</p>
+<h1>{{color}}</h1>
+</div>
+
+
+<!--  Filters Eg Implementation
+      | - this will intrepret as start of filter
+      lastname change to uppercase
+ -->
+<div  ng-controller="personCtrl">  
+	<p>The name is {{ lastName | uppercase  }}</p>
+</div>
+
+
+<div ng-controller="namesCtrl">
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="x in names | orderBy:'country'">
+    {{ x.name + ', ' + x.country }}
+  </li>
+</ul>
+</div>
+
+
+<p> Looping from my custom filter </p>
+<ul  ng-controller="namesCtrlCustom">
+<li ng-repeat="x in names">
+    {{x | myFormatFilter}}
+</li>
+</ul>
+
+
+<div  ng-controller="ServiceEgCtrl">
+<p>The url of this page is:</p>
+<h3>{{myUrl}}</h3>
+</div>
+
+
+<div  ng-controller="ServiceHTTPCtrl"> 
+<p>Today's welcome message is:</p>
+<h1>{{myWelcome}}</h1>
+</div>
+
+
+
+<p>The rootScope's favorite color is still:</p>
+<h1>{{color}}</h1>
+
+<w3-test-directive></w3-test-directive>
+
+
+
+
+
+
+
+
+</body>
+</html>
