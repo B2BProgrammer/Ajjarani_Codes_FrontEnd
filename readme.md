@@ -30,8 +30,8 @@ Full Stack Development, Can be further broken/classified in following layers
 ## STEP A : Front End Development :
 FrontEnd : Skin of the application, where all the users/traffic interact with the complex product/systems behind.
 
-1a. HTML                  - Provides the basic structure & layout for the page to be rendered on browsers
-2b. CSS + BootStrap       - Provides all the color/panel/styles, It is like providing the decorative make-up for the skin
-3c. JavaScript frameworks - Provides the logical brain for the thin skin & acts the data consumer from backend systems
+- a. HTML                  - Provides the basic structure & layout for the page to be rendered on browsers
+- b. CSS + BootStrap       - Provides all the color/panel/styles, It is like providing the decorative make-up for the skin
+- c. JavaScript frameworks - Provides the logical brain for the thin skin & acts the data consumer from backend systems
 
 ![A-FrontEndLayer.JPG](https://github.com/B2BProgrammer/Ajjarani_Codes_FrontEnd/blob/master/images/A-FrontEndLayer.JPG)
