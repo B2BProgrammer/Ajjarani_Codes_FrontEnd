@@ -1,1 +1,1 @@
-![Product LifeCycle - 10000 Feet.JPG](ajith.jnnce06@gmail.com.github.com//Ajjarani_Codes_FrontEnd/images/Product LifeCycle - 10000 Feet.JPG)
+![Product LifeCycle - 10000 Feet.JPG](https://github.com/B2BProgrammer/Ajjarani_Codes_FrontEnd/blob/master/images/Product%20LifeCycle%20-%2010000%20Feet.JPG)
