@@ -27,7 +27,7 @@ Full Stack Development, Can be further broken/classified in following layers
 ![FullStack_1000Feet.JPG](https://github.com/B2BProgrammer/Ajjarani_Codes_FrontEnd/blob/master/images/FullStack_1000Feet.JPG)
 
 
-## STEP A : Front End Development :
+## LAYER A : Front End Development :
 FrontEnd : Skin of the application, where all the users/traffic interact with the complex product/systems behind.
 
 - a. HTML                  - Provides the basic structure & layout for the page to be rendered on browsers
