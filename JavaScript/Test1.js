@@ -47,7 +47,8 @@ function myfunction2(){
 
 
 /**
- * DataTypes Learning
+ * DataTypes Learning :
+ *
  */
 function myfunction3(){
 	
