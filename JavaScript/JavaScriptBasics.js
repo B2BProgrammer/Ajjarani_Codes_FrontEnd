@@ -172,8 +172,6 @@ function myfunction3() {
 }
 
 
-
-
 /**
  * Chapter 4 : JSON Objects
  *
@@ -309,7 +307,6 @@ function traverseJSON3() {
 }
 
 
-
 /**
  * Chapter 5 : Scopes Learning - part 1
  *
@@ -373,20 +370,20 @@ function myfunction52() {
  *   : EVENTS
  *
  * Events : HTML events are "things" that happen to HTML elements.
- * 
+ *
  * For any Action in HTML
  * Specific Reaction is provided from HTML + Javascript
  * i.e Event
- * 
+ *
  * Classification of Events :
  * 1) Embedded - inline Js
  * 2) Call External Function
- * 
+ *
  * Eg :
- * 
+ *
  * 1) onClick()
  * 2) onMouseover()
- * 
+ *
  * Complete list of all the Events in HTML DOM
  * http://www.w3schools.com/jsref/dom_obj_event.asp
  */
@@ -483,7 +480,7 @@ function myfunction7() {
 
 /***
  * Chapter 8 : Dates Lessons
- * 
+ *
  */
 
 function myfunction8() {
@@ -622,17 +619,17 @@ function myfunction111() {
 
 /**
  * Chapter 12 :  Important Concepts
- * 
+ *
  * 1) Hoisting :  VVV Important
- * 2) Strict Mode : 
- * 
- * 
+ * 2) Strict Mode :
+ *
+ *
  * Hoisting is JavaScript's default behavior of moving declarations to the top.
- * ** In Javascript, variable can be USED before DECLARED 
- * 
+ * ** In Javascript, variable can be USED before DECLARED
+ *
  * Why & How ?
  * Js default behaiour all the declaration are moved to the top of current scope, in background
- * 
+ *
  */
 
 function myfunction12() {
