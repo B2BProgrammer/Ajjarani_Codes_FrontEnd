@@ -1,36 +1,48 @@
 /**
  * 
- * document.getElementById
- * 
- * Commonn method to
+ * Module wise building of Javascript
+ *
+ * 1. Using the HTML file & document.getElementById to learn & experience all the concepts of javascript
+ *
+ *
+ * Common Class - Sort of Js Library implementation & Writing all the logics from W3Schools into this JavaScriptBasics.js
+ *
+ * document.getElementById - Common method to
  * 1) Parse/Traverse Document object
  * 2) Find the element by the id
- * 
- * 
- * Common Class - Sort of Js Library implementation & Writing all the logics from W3Schools into this Test1.js
- * 
+ *
  */
 
 
-function myFunction(){
+/**
+Chapter 1 : Basics of using Functions & alert object in Javascript
+ */
+
+function myFunction1(){
 	document.getElementById("demo").innerHTML = "Paragraph Changed";
 	window.alert(5 + 6);  // Create a window alert
-	//document.write(5 + 6); // Deletes everything on screen & only prints in Write
+	document.write(5 + 6); // Deletes everything on screen & only prints in Write
 	console.log("Hello Ajith");
-	
+
 }
 
+
+/**
+  Chapter 2 :
+  1. Declaring & Initialing with the value of Variables
+  2. Calling those Variables from HTML element
+ */
 
 function myfunction2(){
 	var x = 5;
 	var y = 6;
 	var z = x + y;
-	//document.getElementById("demo").innerHTML = z;
-	document.getElementById("demo").innerHTML = 10.50;
-	document.getElementById("demo").innerHTML = 'John Doe';
-	document.getElementById("demo").innerHTML = "Ajith Ajjarni";
-	document.getElementById("demo").innerHTML = (5 + 6) * 10;
-	document.getElementById("demo").innerHTML = "Ajith" + " "  + "Chandrappa";
+	document.getElementById("demo").innerHTML = z;  // 11
+	document.getElementById("demo").innerHTML = 10.50;  // 10.50
+	document.getElementById("demo").innerHTML = 'John Doe'; // John Doe
+	document.getElementById("demo").innerHTML = "Ajith Ajjarni";  // Ajith Ajjarani
+	document.getElementById("demo").innerHTML = (5 + 6) * 10;  // 110
+	document.getElementById("demo").innerHTML = "Ajith" + " "  + "Chandrappa"; // Ajith Ajjarani
 	
 	var lastName = "Doe";
 	var lastname = "Peterson";
@@ -47,10 +59,16 @@ function myfunction2(){
 
 
 /**
- * DataTypes Learning :
+ * Chapter 3 : DataTypes[Though explicit declaration of datatypes doesn't exist in Js]
  *
- * Testing more comments
+ * 1. Strings
+ * 2. Number [Decimals]
+ * 3. Boolean
+ * 4. Arrays
+ * 5. Object [JSON]
  *
+ * 6. Concatenation of Strings & Numbers
+ * 7.
  */
 function myfunction3(){
 	
@@ -504,7 +522,7 @@ function myfunction11(){
 	for (i = 0; i < fLen; i++) {
 	    text += "<li>" + fruits[i] + "</li>";
 	}
-	text += "</ul>";e
+	text += "</ul>";
 	document.getElementById("demo").innerHTML = text;
 	
 	// Array Methods 
