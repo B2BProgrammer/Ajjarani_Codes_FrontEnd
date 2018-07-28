@@ -49,6 +49,8 @@ function myfunction2(){
 /**
  * DataTypes Learning :
  *
+ * Testing more comments
+ *
  */
 function myfunction3(){
 	
