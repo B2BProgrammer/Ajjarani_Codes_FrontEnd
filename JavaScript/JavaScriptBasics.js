@@ -68,7 +68,7 @@ function myfunction2() {
  * 5. Object [JSON]
  *
  * 6. Concatenation of Strings & Numbers
- * 7.
+ * 7. Basic Fetching of value from JSON
  */
 function myfunction3() {
 
@@ -169,15 +169,48 @@ function myfunction3() {
     }
 
     document.getElementById("demo").innerHTML = txt;
+}
 
 
+
+
+/**
+ * Chapter 4 : JSON Objects
+ *
+ * 1. Declaration of JSON Objects (Value(Property) : Pair)
+ * 2. Traversal of JSON Objects
+ */
+function myfunction4() {
+
+    var car = {
+        type: "Fiat",  //Name:Value [pair]
+        model: "500",
+        color: "white"
+    };
+
+    var person = {
+        firstName: "John",     // String as Property
+        lastName: "Doe",
+        age: 50,               // Number as Property
+        eyeColor: "blue",
+        // Function as Property   **Check the function declaration syntax
+        fullName: function () {
+            return this.firstName + "" + this.lastName;
+        }
+    };
+
+
+    // 2 ways of accessing object - properties
+    document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName;
+    document.getElementById("demo").innerHTML = person["firstName"] + " " + person["lastName"];
+    document.getElementById("demo").innerHTML = person.fullName();
 }
 
 
 /**
  * Traversing JSON1
  */
-function test2() {
+function traverseJSON1() {
 
     const obj = {
         "a": 1,
@@ -200,7 +233,7 @@ function test2() {
  * Traversing JSON2
  */
 
-function test() {
+function traverseJSON2() {
     // Json Declaration - work
     var work = {
         "job": [
@@ -270,49 +303,26 @@ function traverseJSON3() {
         ]
     };
 
-
     for (var eachProp in education) {
         console.log(eachProp + " " + education.schools[eachProp].name);
-
-
     }
-
 }
 
-
-/*
- * JSON Objects
- */
-function myfunction4() {
-
-    var car = {
-        type: "Fiat",  //Name:Value [pair]
-        model: "500",
-        color: "white"
-    };
-
-    var person = {
-        firstName: "John",     // String as Property
-        lastName: "Doe",
-        age: 50,               // Number as Property
-        eyeColor: "blue",
-        fullName: function () {               // Function as Property   **Check the function declaration syntax
-            return this.firstName + "" + this.lastName;
-        }
-    };
-
-
-    // 2 ways of accessing object - properties
-    document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName;
-    document.getElementById("demo").innerHTML = person["firstName"] + " " + person["lastName"];
-    document.getElementById("demo").innerHTML = person.fullName();
-}
 
 
 /**
- * Scopes Learning
- * In JavaScript, objects and functions are also variables.
+ * Chapter 5 : Scopes Learning - part 1
  *
+ * (Finding & Analysing the scope(Boundary - where the variable is accessible?)
+ *
+ * 1. Finding the scope of the variable/function/object ?
+ * (In JavaScript, objects and functions are also variables.)
+ *
+ * Levels of Scope :
+ *
+ * 1. Global Scope
+ * 2. Local Scope
+ * 3. Function Scope
  */
 
 function myfunction5() {
@@ -321,17 +331,18 @@ function myfunction5() {
     document.getElementById("demo").innerHTML = "The type of carName is " + typeof carName; //carName is Can't be accessed Out of Scope
 
     function myFunction() {
-        var carName = "Volvo";  //Scope of carName only this scope
+        var carName = "Volvo1";  //Scope of carName only this scope
     }
 }
 
 
 /**
  * Scopes Learning - Part 2
+ * Local Scope : Passed to ??
  * *
  */
-function myfunction6() {
-    var carName = "Volvo"; //Scope only in this myfunction6
+function myfunction51() {
+    var carName = "Volvo2"; //Scope only in this myfunction51
     myFunction();
 
     function myFunction() {
@@ -342,28 +353,32 @@ function myfunction6() {
 
 /**
  * Scopes Learning - Part 3
- * *
+ * Difference between Global & Local Scope
+ *
  */
-function myfunction7() {
+function myfunction52() {
     myFunction();
 
     // code here can use carName as a global variable
     document.getElementById("demo").innerHTML = "I can display " + carName;
 
     function myFunction() {
-        carName = "Volvo";  //Now automatically Global Variable
+        carName = "Volvo3";  //Not declared using var (This will, Now be automatically Global Variable)
+        //var carName = "Volvo3";  //var : will make this local/function Scope[not accessible outside scope]
     }
 }
 
 
-/*
+/***
+ *   : EVENTS
+ *
  * Events : HTML events are "things" that happen to HTML elements.
  * 
- * Any Action in HTML
- * Specific Reaction provided from HTML + Javascript
- * is Event
+ * For any Action in HTML
+ * Specific Reaction is provided from HTML + Javascript
+ * i.e Event
  * 
- * Event :
+ * Classification of Events :
  * 1) Embedded - inline Js
  * 2) Call External Function
  * 
@@ -373,16 +388,21 @@ function myfunction7() {
  * 2) onMouseover()
  * 
  * Complete list of all the Events in HTML DOM
- * http://www.w3schools.com/jsref/dom_obj_event.asp 
- * 
+ * http://www.w3schools.com/jsref/dom_obj_event.asp
  */
 
 
 /**
- * Strings Lessons
+ * Chapter 6 : Strings Lessons
+ *
+ *  /*
+ * http://www.w3schools.com/jsref/jsref_obj_string.asp
+ * http://www.w3schools.com/js/js_string_methods.asp
+ * Refer for more methods on String
+ *
  */
 
-function myfunction8() {
+function myfunction6() {
 
     var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var len = txt.length;
@@ -405,26 +425,17 @@ function myfunction8() {
     var res = str.slice(7, 13); //start, end
     var res = str.substring(7, 13);
 
-    /*
-     * http://www.w3schools.com/jsref/jsref_obj_string.asp
-     * http://www.w3schools.com/js/js_string_methods.asp
-     * Refer for more methods on String
-     *
-     */
-
 }
 
 
-/*
- * Number Lessons
- * ** No - int, long classifciation
- * 
- * Alway 64 Bit Floating point
- * 
- * 
+/**
+ * Chapter 7 : Number Lessons
+ *
+ * 1. In JavaScript : No classification as [Int, Short, Float, Decimal, Long]
+ * Always 64 Bit Floating point
  */
 
-function myfunction9() {
+function myfunction7() {
     var x = 34.00;    // A number with decimals
     var y = 34;       // A number without decimals
 
@@ -452,6 +463,7 @@ function myfunction9() {
     Number(x);        // returns 10
     x = "10 20"
     Number(x);        // returns NaN
+    document.getElementById("demo").innerHTML = x;
 
 
     parseInt("10");         // returns 10.
@@ -466,16 +478,15 @@ function myfunction9() {
     parseFloat("10 20 30");  // returns 10
     parseFloat("10 years");  // returns 10
     parseFloat("years 10");  // returns NaN
-
 }
 
 
-/*
- * Dates Lessons
+/***
+ * Chapter 8 : Dates Lessons
  * 
  */
 
-function myfunction10() {
+function myfunction8() {
 
     var d = new Date();
     var d = new Date("October 13, 2014 11:13:00");
@@ -485,17 +496,23 @@ function myfunction10() {
 }
 
 
-/*
- * Arrays Js Lessons
- * 
- * 
+/**
+ * Chapter 9 : Arrays in JavaScript *
+ *
  * -- Arrays are special objects
  * -- 0 referenced
- * -- 
- * 
+ *
+ *
+ **** In JavaScript, arrays use numbered indexes.
+ **** In JavaScript, objects use named indexes.
+
+ ** - when element Name - number = use Arrays
+ ** - when element Name - String = use JSON(Objects)
+ *
+ * http://www.w3schools.com/jsref/jsref_obj_array.asp - arrays reference
  */
 
-function myfunction11() {
+function myfunction9() {
     var cars = ["Saab", "Volvo", "BMW"];
     document.getElementById("demo").innerHTML = cars;
 
@@ -504,8 +521,10 @@ function myfunction11() {
     document.getElementById("demo").innerHTML = cars2[0];
     document.getElementById("demo").innerHTML = cars2[2];
 
-
+    // Number Referenced
     var person = ["John", "Doe", 46];
+
+    // Property Referenced
     var person = {
         firstName: "John",
         lastName: "Doe",
@@ -525,37 +544,22 @@ function myfunction11() {
     // Array Methods
     document.getElementById("demo").innerHTML = fruits.toString();
     document.getElementById("demo").innerHTML = fruits.join(" * ");  //Banana * Orange * Apple * Mango
-    // http://www.w3schools.com/jsref/jsref_obj_array.asp - arrays reference
 
-
-    fruits.push("Lemon");                // adds a new element (Lemon) to fruits
-    var x = fruits.pop();      // the value of x is "Mango"
-
+    fruits.push("Lemon");       // adds a new element (Lemon) to fruits
+    var x = fruits.pop();      // the value of x is "Lemon"
+    console.log(x);
+    document.getElementById("demo").innerHTML = fruits.join(" * ");
 }
 
 
-/*
- *  * 
- * In JavaScript, arrays use    numbered indexes.
-    In JavaScript, objects use  named indexes.
-    
-    ** - when element Name - number = use Arrays
-    ** - when element Name - String = use JSON(Objects)
+/**
+ * Chapter 10 : Boolean
+ *
+ * 1. Any Value is equated as True
+ * 2. Any NonValue/undefined/untouched is equated to False
  */
 
-function myfunction12() {
-
-
-}
-
-
-/*
- * 
- * Boolean Lessons
- * 
- */
-
-function myfunction13() {
+function myfunction10() {
 
     var b1 = Boolean(100);
     var b2 = Boolean(3.14);
@@ -575,14 +579,15 @@ function myfunction13() {
 
 
 /**
- * Try-Catch Block Eg 1
+ * Chapter 11 : Try-Catch Block Eg 1
  */
-function myfunction14() {
+function myfunction11() {
 
     var message, x;
     message = document.getElementById("message");
     message.innerHTML = "";
-    x = document.getElementById("demo").value;
+    var x = document.getElementById("demo").value;
+    var x = 10;
 
     try {
         if (x == "")
@@ -604,19 +609,19 @@ function myfunction14() {
 /**
  * Try-Catch Block Eg 2
  */
-function myfunction15() {
+function myfunction111() {
     var num = 1;
     try {
         num.toUpperCase();   // You cannot convert a number to upper case
         console.log(num);  // Used for debugging purpose
     }
     catch (err) {
-        document.getElementById("demo").innerHTML = err.name;
+        document.getElementById("demo").innerHTML = err.toString();
     }
 }
 
-/*
- * Imporant Concepts
+/**
+ * Chapter 12 :  Important Concepts
  * 
  * 1) Hoisting :  VVV Important
  * 2) Strict Mode : 
@@ -626,18 +631,17 @@ function myfunction15() {
  * ** In Javascript, variable can be USED before DECLARED 
  * 
  * Why & How ?
- * Js default behaiour all the declaration are moved to the top of current scope, in background 
- 
+ * Js default behaiour all the declaration are moved to the top of current scope, in background
  * 
  */
 
-function myfunction16() {
-    x = 5; // Assign 5 to x                 ASSINGING 1st
+function myfunction12() {
+    x = 5; // Assign 5 to x           --> ASSINGING 1st
 
     elem = document.getElementById("demo"); // Find an element
-    elem.innerHTML = x;                     // Display x in the element           //USAGE 2nd
+    elem.innerHTML = x;                     // Display x in the element --> USAGE 2nd
 
-    var x;                                  // Declare x    // DECLARATION 3rd
+    var x;                                  // Declare x    --> DECLARATION 3rd
 }
 
 /**
