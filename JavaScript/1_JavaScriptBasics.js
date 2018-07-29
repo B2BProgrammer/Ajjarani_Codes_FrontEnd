@@ -5,7 +5,7 @@
  * 1. Using the HTML file & document.getElementById to learn & experience all the concepts of javascript
  *
  *
- * Common Class - Sort of Js Library implementation & Writing all the logics from W3Schools into this JavaScriptBasics.js
+ * Common Class - Sort of Js Library implementation & Writing all the logics into this 1_JavaScriptBasics.js
  *
  * document.getElementById - Common method to
  * 1) Parse/Traverse Document object
@@ -15,7 +15,13 @@
 
 
 /**
- Chapter 1 : Basics of using Functions & alert object in Javascript
+ * Chapter 1 : Basics of using Functions & alert object in Javascript
+ *
+ * 1. Writing/Sending Information/Data out of Js world
+ *  console.log()  [Debugging purpose]
+ *  document.write()  [Only for Testing purpose]
+ *  window.alert()
+
  */
 
 function myFunction1() {
@@ -61,11 +67,15 @@ function myfunction2() {
 /**
  * Chapter 3 : DataTypes[Though explicit declaration of datatypes doesn't exist in Js]
  *
+ * Js has 5 DataTypes :
+ *
  * 1. Strings
  * 2. Number [Decimals]
- * 3. Boolean
- * 4. Arrays
- * 5. Object [JSON]
+ * 3. Boolean*
+ * 4. Object  - 3 Types [Array, Object(JSON), Date)
+ * 5. functions
+ *
+ * null & undefined [2 Data Types that cannot contain values]
  *
  * 6. Concatenation of Strings & Numbers
  * 7. Basic Fetching of value from JSON
@@ -130,13 +140,17 @@ function myfunction3() {
     document.getElementById("demo").innerHTML =
         person.firstName + " is " + person.age + " years old.";
 
-
+    // typeof - usage & return Values
     typeof "John"                // Returns "string"
     typeof 3.14                  // Returns "number"
     typeof false                 // Returns "boolean"
     typeof [1, 2, 3, 4]             // Returns "object" (not "array", see note below)
     typeof {name: 'John', age: 34} // Returns "object"
-
+    typeof function myFunc(){}    // Returns "function"
+    typeof NaN                    // Returns "number"
+    typeof new Date()             // Returns "object"
+    typeof myCar                  // Returns "undefined"
+    typeof null                   // Returns "object"
 
     // Json Declaration - work
     var work = {
@@ -201,7 +215,8 @@ function myfunction4() {
     // 2 ways of accessing object - properties
     document.getElementById("demo").innerHTML = person.firstName + " " + person.lastName;
     document.getElementById("demo").innerHTML = person["firstName"] + " " + person["lastName"];
-    document.getElementById("demo").innerHTML = person.fullName();
+    document.getElementById("demo").innerHTML = person.fullName(); // This will print the return of function - fullName
+    //document.getElementById("demo").innerHTML = person.fullName;  // This will print the function Definition of fullName
 }
 
 
@@ -306,91 +321,8 @@ function traverseJSON3() {
     }
 }
 
-
 /**
- * Chapter 5 : Scopes Learning - part 1
- *
- * (Finding & Analysing the scope(Boundary - where the variable is accessible?)
- *
- * 1. Finding the scope of the variable/function/object ?
- * (In JavaScript, objects and functions are also variables.)
- *
- * Levels of Scope :
- *
- * 1. Global Scope
- * 2. Local Scope
- * 3. Function Scope
- */
-
-function myfunction5() {
-
-    myFunction();
-    document.getElementById("demo").innerHTML = "The type of carName is " + typeof carName; //carName is Can't be accessed Out of Scope
-
-    function myFunction() {
-        var carName = "Volvo1";  //Scope of carName only this scope
-    }
-}
-
-
-/**
- * Scopes Learning - Part 2
- * Local Scope : Passed to ??
- * *
- */
-function myfunction51() {
-    var carName = "Volvo2"; //Scope only in this myfunction51
-    myFunction();
-
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "I can display " + carName;
-    }
-}
-
-
-/**
- * Scopes Learning - Part 3
- * Difference between Global & Local Scope
- *
- */
-function myfunction52() {
-    myFunction();
-
-    // code here can use carName as a global variable
-    document.getElementById("demo").innerHTML = "I can display " + carName;
-
-    function myFunction() {
-        carName = "Volvo3";  //Not declared using var (This will, Now be automatically Global Variable)
-        //var carName = "Volvo3";  //var : will make this local/function Scope[not accessible outside scope]
-    }
-}
-
-
-/***
- *   : EVENTS
- *
- * Events : HTML events are "things" that happen to HTML elements.
- *
- * For any Action in HTML
- * Specific Reaction is provided from HTML + Javascript
- * i.e Event
- *
- * Classification of Events :
- * 1) Embedded - inline Js
- * 2) Call External Function
- *
- * Eg :
- *
- * 1) onClick()
- * 2) onMouseover()
- *
- * Complete list of all the Events in HTML DOM
- * http://www.w3schools.com/jsref/dom_obj_event.asp
- */
-
-
-/**
- * Chapter 6 : Strings Lessons
+ * Chapter 5 : Strings Lessons
  *
  *  /*
  * http://www.w3schools.com/jsref/jsref_obj_string.asp
@@ -399,7 +331,7 @@ function myfunction52() {
  *
  */
 
-function myfunction6() {
+function myfunction5() {
 
     var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var len = txt.length;
@@ -411,6 +343,12 @@ function myfunction6() {
     var x = "John";              // x is a string
     var y = new String("John");  // y is an object  ..Note don't create String as Object
 
+    var x = new String("John");
+    var y = new String("John");
+
+    // (x == y) is false because x and y are different objects
+    document.getElementById("demo").innerHTML = (x===y);
+
     document.getElementById("demo").innerHTML = typeof x + "<br>" + typeof y;
 
     var str = "Please locate where 'locate' occurs!";  // String starts for Zero[0] index
@@ -421,18 +359,17 @@ function myfunction6() {
     var str = "Apple, Banana, Kiwi";
     var res = str.slice(7, 13); //start, end
     var res = str.substring(7, 13);
-
 }
 
 
 /**
- * Chapter 7 : Number Lessons
+ * Chapter 6 : Number Lessons
  *
  * 1. In JavaScript : No classification as [Int, Short, Float, Decimal, Long]
  * Always 64 Bit Floating point
  */
 
-function myfunction7() {
+function myfunction6() {
     var x = 34.00;    // A number with decimals
     var y = 34;       // A number without decimals
 
@@ -479,11 +416,11 @@ function myfunction7() {
 
 
 /***
- * Chapter 8 : Dates Lessons
+ * Chapter 7 : Dates Lessons
  *
  */
 
-function myfunction8() {
+function myfunction7() {
 
     var d = new Date();
     var d = new Date("October 13, 2014 11:13:00");
@@ -494,7 +431,7 @@ function myfunction8() {
 
 
 /**
- * Chapter 9 : Arrays in JavaScript *
+ * Chapter 8 : Arrays in JavaScript *
  *
  * -- Arrays are special objects
  * -- 0 referenced
@@ -509,14 +446,15 @@ function myfunction8() {
  * http://www.w3schools.com/jsref/jsref_obj_array.asp - arrays reference
  */
 
-function myfunction9() {
+function myfunction8() {
     var cars = ["Saab", "Volvo", "BMW"];
     document.getElementById("demo").innerHTML = cars;
 
     var cars2 = new Array("Saab", "Volvo", "BMW");
-    document.getElementById("demo").innerHTML = cars2;
-    document.getElementById("demo").innerHTML = cars2[0];
+    document.getElementById("demo").innerHTML = cars2;  // Accessing the full Array
+    document.getElementById("demo").innerHTML = cars2[0];  // Accessing specific instance
     document.getElementById("demo").innerHTML = cars2[2];
+
 
     // Number Referenced
     var person = ["John", "Doe", 46];
@@ -531,6 +469,7 @@ function myfunction9() {
 
     fruits = ["Banana", "Orange", "Apple", "Mango"];
     fLen = fruits.length;
+
     text = "<ul>";
     for (i = 0; i < fLen; i++) {
         text += "<li>" + fruits[i] + "</li>";
@@ -550,13 +489,13 @@ function myfunction9() {
 
 
 /**
- * Chapter 10 : Boolean
+ * Chapter 9 : Boolean
  *
  * 1. Any Value is equated as True
  * 2. Any NonValue/undefined/untouched is equated to False
  */
 
-function myfunction10() {
+function myfunction9() {
 
     var b1 = Boolean(100);
     var b2 = Boolean(3.14);
@@ -576,14 +515,14 @@ function myfunction10() {
 
 
 /**
- * Chapter 11 : Try-Catch Block Eg 1
+ * Chapter 10 : Try-Catch Block Eg 1
  */
-function myfunction11() {
+function myfunction10() {
 
     var message, x;
     message = document.getElementById("message");
     message.innerHTML = "";
-    var x = document.getElementById("demo").value;
+   // var x = document.getElementById("demo").value;
     var x = 10;
 
     try {
@@ -600,13 +539,16 @@ function myfunction11() {
     catch (err) {
         message.innerHTML = "Input is " + err;
     }
+    finally {
+        console.log("This statement is executed in finally block");
+    }
 }
 
 
 /**
  * Try-Catch Block Eg 2
  */
-function myfunction111() {
+function myfunction101() {
     var num = 1;
     try {
         num.toUpperCase();   // You cannot convert a number to upper case
@@ -614,39 +556,37 @@ function myfunction111() {
     }
     catch (err) {
         document.getElementById("demo").innerHTML = err.toString();
+    } finally {
+        console.log("This statement is executed in finally block");
     }
 }
 
-/**
- * Chapter 12 :  Important Concepts
+/***
+ *   : EVENTS
  *
- * 1) Hoisting :  VVV Important
- * 2) Strict Mode :
+ * Events : HTML events are "things" that happen to HTML elements.
  *
+ * For any Action in HTML
+ * Specific Reaction is provided from HTML + Javascript
+ * i.e Event
  *
- * Hoisting is JavaScript's default behavior of moving declarations to the top.
- * ** In Javascript, variable can be USED before DECLARED
+ * Classification of Events :
+ * 1) Embedded - inline Js
+ * 2) Call External Function
  *
- * Why & How ?
- * Js default behaiour all the declaration are moved to the top of current scope, in background
+ * Eg :
  *
+ * 1) onClick()
+ * 2) onMouseover()
+ *
+ * Complete list of all the Events in HTML DOM
+ * http://www.w3schools.com/jsref/dom_obj_event.asp
  */
 
-function myfunction12() {
-    x = 5; // Assign 5 to x           --> ASSINGING 1st
-
-    elem = document.getElementById("demo"); // Find an element
-    elem.innerHTML = x;                     // Display x in the element --> USAGE 2nd
-
-    var x;                                  // Declare x    --> DECLARATION 3rd
-}
 
 /**
  *
  * 1) Addition is for numbers
  * 2) Concatenation is for Strings
  *
- *
  */
-
-
