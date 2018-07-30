@@ -19,6 +19,7 @@
  * 4. null
  * 5. undefined
  *
+ * but wrappers objects are created around primitives, while doing any operations on String, number, boolean
   *
  */
 

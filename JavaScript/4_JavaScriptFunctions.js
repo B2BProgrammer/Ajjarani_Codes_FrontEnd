@@ -31,7 +31,10 @@ var x = myFunction41(4, 3); // Return Value of Function, can be used as values
  * 1. Anonymous function (a function without a name)
  * 2. Functions stored in variables, are Anonymous, Always called from variable name
  */
-var x = function (a, b) {return a * b};
+var x = function (a, b) {
+    return a * b
+    console.log(arguments.length);
+    };
 var z = x(4,3) // Calling the function x
 console.log("Called the Function Expression :"+z);
 
@@ -52,9 +55,17 @@ console.log("Called the Function Constructor :"+x1);
  * (); - Adding this, Is letting know the compiler to invoke on itself
  *
  * ( -- function defintion inside here)();
+ *
+ * IIFE (Immediately Invoked Function Expression)
+     ( fn(){
+        ---;
+        ---;
+     })();
+
+    VVV : IIFE will not introduce a global variable also.
  */
 ( function () {
-        var x = "Hello, Ajith - I got Self Invoked !! .. I am part of Self Invocation Function";
+        var x = "Hello, Ajith - I'am IIFE - I got Self Invoked !! .. I am part of Self Invocation Function";
         console.log(x);
     }
 )();
