@@ -69,7 +69,7 @@ const promiseWifeBringingTickts = new Promise((resolve, reject) => {
  */
 
 /**
- * In the then block, we will add more promise
+ * In the then block, we will add another promise
  *
  * PROMISE NAME : getPopCorn
  *
@@ -77,12 +77,23 @@ const promiseWifeBringingTickts = new Promise((resolve, reject) => {
 const getPopcorn = promiseWifeBringingTickts.then((tic) =>{
      console.log(`husband : we should go in`);
      console.log('wife: no i am hungry ');
-     return new Promise((resolve,reject)=> { resolve(`Person 3 : ${tic} & popcorn : shows Ticket`)}); // Returning teh promise
+     return new Promise((resolve,reject)=> { resolve(`${tic} & popcorn`)}); // Returning teh promise
 });
 
-// Catching the promise
-getPopcorn.then((tic) =>{
-        console.log(tic);
+/**
+ * In the then block, we will add another promise
+ *
+ * PROMISE NAME : getButter
+ */
+const getButter = getPopcorn.then((tic) =>{
+    console.log(`husband : we should go in`);
+    console.log(`wife : I need butter on my popcorn`);
+    return new Promise((resolve,reject)=> { resolve(`Person 3 : ${tic} & popcorn & Butter : shows Ticket`)}); // Returning teh promise
+});
+
+// catching the promise & running the then block
+getButter.then((tic) => {
+    console.log(tic);
 });
 
 console.log("Person 4 : Shows Ticket");
