@@ -14,8 +14,11 @@
  *
  */
 
-/*** *
+/***
+ *
  * WITH ASYNC/AWAIT Model  (Best approach)
+ *
+ *
  */
 
 console.log("Person 1 : Shows Ticket");
@@ -28,17 +31,19 @@ console.log("Person 2 : Shows Ticket");
  *
  */
 const preMovie = async () =>{
-    // 1. Create a promise
+    // 1.a Create a promise[promiseWifeBringingTickts]
     const promiseWifeBringingTickts = new Promise((resolve, reject) => {
         setTimeout( ()=> {
-            resolve('ticket3');  // RESOLVE is the return of promise once condition is met
+            reject('ticket3');  // RESOLVE is the return of promise once condition is met
         },3000)
     });
 
-    //2. await will wait for promise(promiseWifeBringingTickts) to complete & send it's resolve
-    // await only works inside async function
-    let ticketAwaited = await promiseWifeBringingTickts;
-
+    let ticketAwaited
+    try {
+        ticketAwaited = await promiseWifeBringingTickts;
+    } catch (e) {
+        ticketAwaited = 'sad face';
+    }
     return ticketAwaited;
 }
 

@@ -31,7 +31,7 @@ console.log("Person 2 : Shows Ticket");
  *
  */
 const preMovie = async () =>{
-    // 1.a Create a promise
+    // 1.a Create a promise[promiseWifeBringingTickts]
     const promiseWifeBringingTickts = new Promise((resolve, reject) => {
         setTimeout( ()=> {
             resolve('ticket3');  // RESOLVE is the return of promise once condition is met
@@ -47,7 +47,7 @@ const preMovie = async () =>{
     console.log('wife: no i am hungry ');
 
 
-    // 2.a Promise
+    // 2.a Create a Promise[getPopcorn]
     const getPopcorn = promiseWifeBringingTickts.then((tic) =>{
         return new Promise((resolve,reject)=> { resolve(`${tic} & popcorn`)}); // resolve returning teh promise
     });
