@@ -1,4 +1,8 @@
 /***
+ *Video for understanding Asyc-Await
+ * https://www.youtube.com/watch?v=IGoAdn-e5II
+ *
+ *
  * Scenario to understand How Concurrency is handled in JavaScript ?
  *
  * 1. Ticket Collector is checking the tickets before letting person into movie Hall
@@ -10,6 +14,9 @@
  * Person 5 : Have ticket
  *
  * 3. How Js - will treat this situation, without P3, blocking the remaining P4 & P5
+ *
+ *
+ *
  *
  *
  */
